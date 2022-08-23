@@ -17,21 +17,21 @@ function App() {
 	<div className="App">
 		<Navbar bg="dark" variant="dark">
 			<Container>
-				<Navbar.Brand onClick={()=>{navigate('/')}}>ShoesShop</Navbar.Brand>
+				<Navbar.Brand onClick={()=>{navigate('/react-shop/')}}>ShoesShop</Navbar.Brand>
 				<Nav className="me-auto">
-					<Nav.Link onClick={()=>{navigate('/')}}>Home</Nav.Link>
-					<Nav.Link onClick={()=>{navigate('/detail')}}>Detail</Nav.Link>
+					<Nav.Link onClick={()=>{navigate('/react-shop/')}}>Home</Nav.Link>
+					<Nav.Link onClick={()=>{navigate('/react-shop/detail/0')}}>Detail</Nav.Link>
 				</Nav>
 			</Container>
 		</Navbar>
 
 		<Routes>
-			<Route path="/" element={ <Main shoes={shoes} /> } />
-			<Route path="/detail" element={ <Detail shoes={shoes} /> } />
-			<Route path="/detail/:id" element={ <Detail shoes={shoes} /> } />
+			<Route path="/react-shop/" element={ <Main shoes={shoes} /> } />
+			<Route path="/react-shop/detail" element={ <Detail shoes={shoes} /> } />
+			<Route path="/react-shop/detail/:id" element={ <Detail shoes={shoes} /> } />
 			{/* <Route path='*' element={ <div>없는페이지 입니다. </div>}></Route> */}
 
-			<Route path="/event" element={ <Event /> }>
+			<Route path="/react-shop/event" element={ <Event /> }>
 				<Route path="one" element={ <p>첫 주문시 양배추즙 서비스</p> } />
 				<Route path="two" element={ <p>생일기념 쿠폰 받기</p> } />
 			</Route>
