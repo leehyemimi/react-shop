@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/react-shop/static/css/main.76c5cb1d.css",
-    "main.js": "/react-shop/static/js/main.c374de7d.js",
-    "static/js/787.23170c61.chunk.js": "/react-shop/static/js/787.23170c61.chunk.js",
+    "main.css": "/react-shop/static/css/main.d223d2af.css",
+    "main.js": "/react-shop/static/js/main.ad09d405.js",
+    "static/js/787.affa5bbf.chunk.js": "/react-shop/static/js/787.affa5bbf.chunk.js",
     "static/media/shoes1.jpg": "/react-shop/static/media/shoes1.e7b6da8d465ea481d3e0.jpg",
     "index.html": "/react-shop/index.html",
-    "main.76c5cb1d.css.map": "/react-shop/static/css/main.76c5cb1d.css.map",
-    "main.c374de7d.js.map": "/react-shop/static/js/main.c374de7d.js.map",
-    "787.23170c61.chunk.js.map": "/react-shop/static/js/787.23170c61.chunk.js.map"
+    "main.d223d2af.css.map": "/react-shop/static/css/main.d223d2af.css.map",
+    "main.ad09d405.js.map": "/react-shop/static/js/main.ad09d405.js.map",
+    "787.affa5bbf.chunk.js.map": "/react-shop/static/js/787.affa5bbf.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.76c5cb1d.css",
-    "static/js/main.c374de7d.js"
+    "static/css/main.d223d2af.css",
+    "static/js/main.ad09d405.js"
   ]
 }
