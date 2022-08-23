@@ -1,0 +1,20 @@
+.App {
+	text-align: center;
+}
+
+.main-bg {
+	height : 300px;
+	background-image : url('./shoes1.jpg');
+	background-size : cover;
+	background-position : center;
+}
+
+.event{
+	margin-top: 50px;
+	h4{
+		font-weight: bold;
+	}
+	p{
+		color:#999;
+	}
+}

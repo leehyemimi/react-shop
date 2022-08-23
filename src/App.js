@@ -1,60 +1,52 @@
-
-import { Navbar , Nav, Container} from 'react-bootstrap';
 import { useState } from 'react';
-import './App.css';
-import data from './data.js'
+import { Navbar,Container,Nav } from 'react-bootstrap';
+import { Routes, Route, Link, useNavigate, Outlet } from 'react-router-dom';
+
+import data from './components/data';
+
+import Detail from './page/Detail'
+import Main from './page/Main'
+
+import './App.scss';
 
 function App() {
-	let [shoes,setShoes]= useState(data);
+	let [shoes] = useState(data);
+	let navigate = useNavigate();
 
 	return (
-		<div className="App">
-			<Navbar bg="dark" variant="dark">
-				<Container>
-				<Navbar.Brand href="#home">Navbar</Navbar.Brand>
+	<div className="App">
+		<Navbar bg="dark" variant="dark">
+			<Container>
+				<Navbar.Brand onClick={()=>{navigate('/')}}>ShoesShop</Navbar.Brand>
 				<Nav className="me-auto">
-					<Nav.Link href="#home">Home</Nav.Link>
-					<Nav.Link href="#features">Features</Nav.Link>
-					<Nav.Link href="#pricing">Pricing</Nav.Link>
+					<Nav.Link onClick={()=>{navigate('/')}}>Home</Nav.Link>
+					<Nav.Link onClick={()=>{navigate('/detail')}}>Detail</Nav.Link>
 				</Nav>
-				</Container>
-			</Navbar>
-			<div className="main-bg"></div>
-			<div className="container text-center shoes-list">
-				<div className="row">
-					{
-						shoes.map((a,i)=>{
-							return(								
-								<Card shoes={shoes} i={i}></Card>								
-							)	
-						})
-					}
+			</Container>
+		</Navbar>
 
-					{/* <div className="col">
-						<img src="https://codingapple1.github.io/shop/shoes1.jpg" alt="" />
-						<h4>{data[0].title}</h4>
-						<p>{data[0].price}</p>
-					</div>
-					<div className="col"><img src="https://codingapple1.github.io/shop/shoes2.jpg" alt="" /></div>
-				
-					<div className="col"><img src="https://codingapple1.github.io/shop/shoes3.jpg" alt="" /></div> */}
-				</div>
-			</div>
-		</div>
+		<Routes>
+			<Route path="/" element={ <Main shoes={shoes} /> } />
+			<Route path="/detail" element={ <Detail shoes={shoes} /> } />
+			<Route path="/detail/:id" element={ <Detail shoes={shoes} /> } />
+			{/* <Route path='*' element={ <div>없는페이지 입니다. </div>}></Route> */}
+
+			<Route path="/event" element={ <Event /> }>
+				<Route path="one" element={ <p>첫 주문시 양배추즙 서비스</p> } />
+				<Route path="two" element={ <p>생일기념 쿠폰 받기</p> } />
+			</Route>
+		</Routes>
+		
+	</div>
 	);
 }
 
-
-
-function Card(props){
-	return (
-		<div className='col-md-4'>
-			<img src={"https://codingapple1.github.io/shop/shoes"+(props.i+1)+".jpg"} alt="" className='shoes-img'/>
-			<h4>{props.shoes[props.i].title}</h4>
-			<p>{props.shoes[props.i].price}</p>
+function Event(){
+	return(
+		<div className='event'>
+			<h4>오늘의 이벤트</h4>
+			<Outlet></Outlet>
 		</div>
-	);
+	)
 }
-
-
 export default App;
