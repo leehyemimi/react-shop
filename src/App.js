@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Navbar, Container, Nav } from 'react-bootstrap';
 import { Routes, Route, Link, useNavigate, Outlet } from 'react-router-dom';
 
+//data
 import data from './components/data';
 
 //page
@@ -13,7 +14,7 @@ import Notpage from './page/Notpage'
 import './App.scss';
 
 function App() {
-	let [shoes] = useState(data);
+	let [shoes, setShoes] = useState(data);
 	let navigate = useNavigate();
 
 	return (
@@ -31,7 +32,7 @@ function App() {
 			</Navbar>
 
 			<Routes>
-				<Route path="/react-shop/" element={<Main shoes={shoes} />} />
+				<Route path="/react-shop/" element={<Main shoes={shoes} setShoes={setShoes} />} />
 				<Route path="/react-shop/detail" element={<Detail shoes={shoes} />} />
 				<Route path="/react-shop/detail/:id" element={<Detail shoes={shoes} />} />
 				<Route path='*' element={<Notpage />}></Route>
@@ -41,8 +42,7 @@ function App() {
 					<Route path="two" element={<p>생일기념 쿠폰 받기</p>} />
 				</Route>
 			</Routes>
-
-		</div>
+		</div >
 	);
 }
 
