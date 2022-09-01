@@ -15,6 +15,7 @@ import './App.scss';
 
 function App() {
 	let [shoes, setShoes] = useState(data);
+	let [재고, 재고변경] = useState([10, 11, 12]);
 	let navigate = useNavigate();
 
 	return (
