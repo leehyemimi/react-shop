@@ -3,7 +3,7 @@ name: Github Pages Deploy
 on:
   push:
     branches:
-      - 'master'
+      - "master"
 
 jobs:
   build:
@@ -19,6 +19,8 @@ jobs:
 
       - name: Install and build
         run: npm install && npm run build
+        env:
+        CI: "" # 경고를 에러로 보지 않게 함
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@4.1.1
